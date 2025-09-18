@@ -56,19 +56,17 @@ int readWordsAndCountCorrect(const char* fileName, const char* expectedWord) {
       checkedLetters[i] = 0;
     }
 
-    for (int i = 0; i < strlen(word); i++) {
-      char letter = word[i];
-
-      for (int j = 0; j < LENGTH_OF_EXPECTED_WORD; j++) {
-        if (letter == expectedWord[j]) {
-          checkedLetters[j] = 1;
+    for (char letter : word) {
+      for (int i = 0; i < LENGTH_OF_EXPECTED_WORD; i++) {
+        if (letter == expectedWord[i]) {
+          checkedLetters[i] = 1;
         }
       }
     }
 
     int amountOfSameLetters = 0;
-    for (int i = 0; i < LENGTH_OF_EXPECTED_WORD; i++) {
-      amountOfSameLetters += checkedLetters[i];
+    for (int element : checkedLetters) {
+      amountOfSameLetters += element;
     }
 
     if (amountOfSameLetters == LENGTH_OF_EXPECTED_WORD) {

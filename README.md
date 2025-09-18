@@ -16,7 +16,7 @@
 
 Запуск программы:
 ```bash
-$ ./app --word itmo --file example.txt
+$ ./neatcounter --word itmo --file example.txt
 3
 ```
 

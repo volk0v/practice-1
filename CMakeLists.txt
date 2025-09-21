@@ -8,7 +8,7 @@ set(CMAKE_CXX_VERSION 23)
 add_executable(
     neatcounter 
     main.cpp 
-    src/consoleparser.cpp include/consoleparser.h
-    src/fileparser.cpp  include/fileparser.h
-    src/errors.cpp include/errors.h
+    src/console_parser.cpp include/console_parser.h
+    src/file_parser.cpp  include/file_parser.h
+    include/errors.h
 )

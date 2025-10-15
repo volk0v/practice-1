@@ -1,10 +1,10 @@
-#include <console_parser.hpp>
-#include <errors.hpp>
-#include <file_parser.hpp>
-
 #include <cstring>
 #include <fstream>
 #include <iostream>
+
+#include "console_parser.hpp"
+#include "errors.hpp"
+#include "file_parser.hpp"
 
 int main(int argc, char** argv) {
   if (argc < 5) {

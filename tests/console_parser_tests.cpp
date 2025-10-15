@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "console_parser.h"
+#include "console_parser.hpp"
 
 TEST(ConsoleParserTests, Getting_word) {
   std::vector<const char*> args = {"./app", "--word", "test", "--file",

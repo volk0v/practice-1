@@ -1,6 +1,6 @@
-#include <console_parser.h>
-#include <errors.h>
-#include <file_parser.h>
+#include <console_parser.hpp>
+#include <errors.hpp>
+#include <file_parser.hpp>
 
 #include <cstring>
 #include <fstream>

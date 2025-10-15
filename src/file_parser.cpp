@@ -10,8 +10,8 @@ namespace file_parser {
 const size_t kMaxWordSize = 32;
 
 int ReadWordsAndCountCorrect(const char* file_name, const char* expected_word) {
-  std::ifstream is(file_name);
-  if (!is.is_open()) {
+  std::ifstream input_file(file_name);
+  if (!input_file.is_open()) {
     std::cerr << errors::kFailedToOpen << std::endl;
     return -1;
   }
@@ -20,7 +20,7 @@ int ReadWordsAndCountCorrect(const char* file_name, const char* expected_word) {
   int amount_of_correct_words = 0;
 
   char word[kMaxWordSize + 1];
-  while (is >> word) {
+  while (input_file >> word) {
     int checked_letters[kLengthOfExpectedWord];
     for (int i = 0; i < kLengthOfExpectedWord; i++) {
       checked_letters[i] = 0;

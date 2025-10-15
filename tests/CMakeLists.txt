@@ -9,15 +9,13 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 
-add_library(${PROJECT_NAME}_tests_sources OBJECT
-    console_parser_tests.cpp
-)
-target_include_directories(${PROJECT_NAME}_tests_sources PRIVATE ../include)
+file(GLOB ${PROJECT_NAME}_tests_files ./*.cpp)
 
 add_executable(
     ${PROJECT_NAME}_tests
-    $<TARGET_OBJECTS:neatcounter_sources>
-    $<TARGET_OBJECTS:neatcounter_tests_sources>
+    ${${PROJECT_NAME}_tests_files}
+    $<TARGET_OBJECTS:neatcounter_src>
+    $<TARGET_OBJECTS:neatcounter_headers>
 )
 
 target_include_directories(${PROJECT_NAME}_tests PRIVATE ../include)

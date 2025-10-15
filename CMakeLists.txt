@@ -3,12 +3,8 @@ project(neatcounter LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(${PROJECT_NAME}_sources OBJECT
-    src/console_parser.cpp include/console_parser.h
-    src/file_parser.cpp include/file_parser.h
-    include/errors.h
-)
-target_include_directories(${PROJECT_NAME}_sources PRIVATE include)
+add_subdirectory(include)
+add_subdirectory(src)
 
 enable_testing()
 add_subdirectory(tests)
@@ -16,6 +12,7 @@ add_subdirectory(tests)
 add_executable(
     neatcounter
     main.cpp
-    $<TARGET_OBJECTS:neatcounter_sources>
+    $<TARGET_OBJECTS:neatcounter_src>
+    $<TARGET_OBJECTS:neatcounter_headers>
 )
 target_include_directories(${PROJECT_NAME} PRIVATE include)

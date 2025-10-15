@@ -2,7 +2,7 @@
 
 namespace console_parser {
 
-char* GetValueOfArgument(int argc, char** argv, const char* argument_name) {
+const char* GetValueOfArgument(int argc, const char** argv, const char* argument_name) {
   if (argc < 5) {
     return nullptr;
   }
@@ -16,11 +16,11 @@ char* GetValueOfArgument(int argc, char** argv, const char* argument_name) {
   return nullptr;
 }
 
-char* GetWordFromArguments(int argc, char** argv) {
+const char* GetWordFromArguments(int argc, const char** argv) {
   return GetValueOfArgument(argc, argv, "--word");
 }
 
-char* GetFilenameFromArguments(int argc, char** argv) {
+const char* GetFilenameFromArguments(int argc, const char** argv) {
   return GetValueOfArgument(argc, argv, "--file");
 }
 

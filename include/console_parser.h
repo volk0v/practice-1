@@ -3,6 +3,8 @@
 #include <cstring>
 
 namespace console_parser {
-char* GetWordFromArguments(int argc, char** argv);
-char* GetFilenameFromArguments(int argc, char** argv);
+
+const char* GetWordFromArguments(int argc, const char** argv);
+const char* GetFilenameFromArguments(int argc, const char** argv);
+
 };  // namespace console_parser

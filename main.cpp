@@ -12,8 +12,10 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  const char* word = console_parser::GetWordFromArguments(argc, argv);
-  const char* file_name = console_parser::GetFilenameFromArguments(argc, argv);
+  const char* word = console_parser::GetWordFromArguments(
+      argc, const_cast<const char**>(argv));
+  const char* file_name = console_parser::GetFilenameFromArguments(
+      argc, const_cast<const char**>(argv));
 
   if (word == nullptr || file_name == nullptr) {
     std::cerr << errors::kWrongArgument << std::endl;

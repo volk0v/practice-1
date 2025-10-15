@@ -1,7 +1,6 @@
 #include "file_parser.hpp"
 
 #include <fstream>
-#include <iostream>
 
 #include "errors.hpp"
 
@@ -38,10 +37,7 @@ bool IsCorrectWord(const char* word, const char* expected_word,
 
 int ReadWordsAndCountCorrect(const char* file_name, const char* expected_word) {
   std::ifstream input_file(file_name);
-  if (!input_file.is_open()) {
-    std::cerr << errors::kFailedToOpen << std::endl;
-    return -1;
-  }
+  if (!input_file.is_open()) return -1;
 
   const size_t expected_length = strlen(expected_word);
   int amount_of_correct_words = 0;

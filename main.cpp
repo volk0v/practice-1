@@ -23,7 +23,10 @@ int main(int argc, char** argv) {
   }
 
   int correct_words = file_parser::ReadWordsAndCountCorrect(file_name, word);
-  if (correct_words == -1) return 1;
+  if (correct_words == -1) {
+    std::cerr << errors::kFailedToOpen << std::endl;
+    return 1;
+  }
 
   std::cout << correct_words << std::endl;
 

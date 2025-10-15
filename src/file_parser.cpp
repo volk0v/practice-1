@@ -46,4 +46,5 @@ int ReadWordsAndCountCorrect(const char* file_name, const char* expected_word) {
 
   return amount_of_correct_words;
 }
+
 };  // namespace file_parser
